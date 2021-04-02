@@ -76,9 +76,9 @@ Vale usar como ayuda el `Diagrama estático` que muestra Wollok, pero ojo :eyes:
 Desarrollar un modelo de vendedores que permita consultar:
 
 1. Dada una ciudad, si un vendedor _puede trabajar_ en esa ciudad. La condición depende del tipo de vendedor, como se indica a continuación:
-   - _vendedor fijo_: debe ser la ciudad en la que vive.
-   - _viajante_: la ciudad debe estar en una provincia en la que está habilitado.
-   - _comercio corresponsal_: debe ser una ciudad en la que tiene sucursal.
+    - _vendedor fijo_: debe ser la ciudad en la que vive.
+    - _viajante_: la ciudad debe estar en una provincia en la que está habilitado.
+    - _comercio corresponsal_: debe ser una ciudad en la que tiene sucursal.
 1. Si un vendedor _es versátil_. Las condiciones son: que tenga al menos tres certificaciones, que tenga al menos una sobre productos, y al menos una que no sea sobre productos.
 1. Si un vendedor _es firme_. La condición es que el puntaje total que le otorgan sus certificaciones sea mayor o igual a 30.
 
