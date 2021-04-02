@@ -5,7 +5,7 @@ class Certificacion(val esDeProducto: Boolean, val puntaje: Int)
 abstract class Vendedor {
     // Acá es obligatorio poner el tipo de la lista, porque como está vacía no lo puede inferir.
     // Además, a una MutableList se le pueden agregar elementos
-    val certificaciones = mutableListOf<Certificacion>()
+    private val certificaciones = mutableListOf<Certificacion>()
 
     // Definimos el método abstracto.
     // Como no vamos a implementarlo acá, es necesario explicitar qué devuelve.
@@ -26,8 +26,9 @@ abstract class Vendedor {
 
     fun certificacionesDeProducto() = certificaciones.count { it.esDeProducto }
     fun otrasCertificaciones() = certificaciones.count { !it.esDeProducto }
-
     fun puntajeCertificaciones() = certificaciones.sumBy { c -> c.puntaje }
+    fun esGenerico() = certificaciones.any { !it.esDeProducto }
+
 }
 
 // En los parámetros, es obligatorio poner el tipo
