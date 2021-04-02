@@ -58,8 +58,9 @@ class ComercioCorresponsal(val ciudades: List<Ciudad>) : Vendedor() {
         return (this.cantidadSucursales() or this.cantidadProvincias())
     }
     private fun cantidadSucursales() = ciudades.size >= 5
-    //TODO necesito que la colección que de como resultado el map hacerla conjunto para eliminar los repetidos
-    private fun cantidadProvincias() = ciudades.map { it.provincia }.size >= 3
+
+    private val listaDeProvincia = ciudades.map { it.provincia }
+    private fun cantidadProvincias() = listaDeProvincia.toSet().size >=3
 
 }
 
