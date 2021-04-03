@@ -32,7 +32,6 @@ class CentroDeDistribucionTest: DescribeSpec({
         it("Error de agregado"){
         exception.message?.startsWith("YA EXISTE VENDEDOR")
         }
-
         it("es Vendedor Estrella"){
             centro.vendedorEstrella().shouldBe(viajante)
         }
