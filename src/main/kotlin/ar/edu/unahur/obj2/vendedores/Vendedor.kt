@@ -32,7 +32,7 @@ abstract class Vendedor {
 }
 
 // En los parámetros, es obligatorio poner el tipo
-class VendedorFijo(val ciudadOrigen: Ciudad) : Vendedor() {
+class VendedorFijo(private val ciudadOrigen: Ciudad) : Vendedor() {
     override fun puedeTrabajarEn(ciudad: Ciudad): Boolean {
         return ciudad == ciudadOrigen
     }
@@ -40,7 +40,7 @@ class VendedorFijo(val ciudadOrigen: Ciudad) : Vendedor() {
 }
 
 // A este tipo de List no se le pueden agregar elementos una vez definida
-class Viajante(val provinciasHabilitadas: List<Provincia>) : Vendedor() {
+class Viajante(private val provinciasHabilitadas: List<Provincia>) : Vendedor() {
     override fun puedeTrabajarEn(ciudad: Ciudad): Boolean {
         return provinciasHabilitadas.contains(ciudad.provincia)
     }
@@ -50,7 +50,7 @@ class Viajante(val provinciasHabilitadas: List<Provincia>) : Vendedor() {
     private fun sumaDePoblacion() = provinciasHabilitadas.sumBy { it.poblacion }
 }
 
-class ComercioCorresponsal(val ciudades: List<Ciudad>) : Vendedor() {
+class ComercioCorresponsal(private val ciudades: List<Ciudad>) : Vendedor() {
     override fun puedeTrabajarEn(ciudad: Ciudad): Boolean {
         return ciudades.contains(ciudad)
     }
