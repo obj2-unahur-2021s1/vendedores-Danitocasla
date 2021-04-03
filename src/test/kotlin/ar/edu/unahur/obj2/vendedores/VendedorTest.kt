@@ -27,6 +27,11 @@ class VendedorTest : DescribeSpec({
                 vendedorFijo.esInfluyente().shouldBeFalse()
             }
         }
+        describe("no es versatil"){
+            it("esVersatil"){
+                vendedorFijo.esVersatil().shouldBeFalse()
+            }
+        }
     }
 
     describe("Viajante") {
@@ -45,6 +50,11 @@ class VendedorTest : DescribeSpec({
         describe("esInfluyente"){
             it("es influyente") {
                 viajante.esInfluente().shouldBeTrue()
+            }
+        }
+        describe("no es versatil"){
+            it("esVersatil"){
+                viajante.esVersatil().shouldBeFalse()
             }
         }
     }
@@ -96,6 +106,21 @@ class VendedorTest : DescribeSpec({
             }
             it("no es influyente") {
                 comercio3.esInfluyente().shouldBeFalse()
+            }
+        }
+        describe("no es versatil 1"){
+            it("esVersatil"){
+                comercio1.esVersatil().shouldBeFalse()
+            }
+        }
+        describe("no es versatil 2"){
+            it("esVersatil"){
+                comercio2.esVersatil().shouldBeFalse()
+            }
+        }
+        describe("no es versatil 3"){
+            it("esVersatil"){
+                comercio3.esVersatil().shouldBeFalse()
             }
         }
     }
