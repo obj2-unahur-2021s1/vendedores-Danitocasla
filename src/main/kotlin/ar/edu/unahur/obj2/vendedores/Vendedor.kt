@@ -24,8 +24,8 @@ abstract class Vendedor {
 
     fun esFirme() = this.puntajeCertificaciones() >= 30
 
-    fun certificacionesDeProducto() = certificaciones.count { it.esDeProducto }
-    fun otrasCertificaciones() = certificaciones.count { !it.esDeProducto }
+    private fun certificacionesDeProducto() = certificaciones.count { it.esDeProducto }
+    private fun otrasCertificaciones() = certificaciones.count { !it.esDeProducto }
     fun puntajeCertificaciones() = certificaciones.sumBy { c -> c.puntaje }
     fun esGenerico() = certificaciones.any { !it.esDeProducto }
 
