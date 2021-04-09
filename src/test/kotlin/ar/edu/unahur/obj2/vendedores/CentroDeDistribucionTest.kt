@@ -17,7 +17,9 @@ class CentroDeDistribucionTest: DescribeSpec({
     val parana = Ciudad(entroRios)
     val viajante = Viajante(listOf(misiones, cordoba))
     val vendedorFijo = VendedorFijo(obera)
-    val centro = CentroDeDistribucion(ciudad = sanIgnacio, vendedores = mutableListOf(vendedorFijo, viajante))
+    val centro = CentroDeDistribucion(ciudad = sanIgnacio)
+    centro.agregarVendedores(vendedorFijo)
+    centro.agregarVendedores(viajante)
     val certificacion1 = Certificacion(true,20)
     val certificacion2 = Certificacion(false,12)
 

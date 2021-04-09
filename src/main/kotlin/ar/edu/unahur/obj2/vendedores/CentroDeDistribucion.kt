@@ -1,20 +1,16 @@
 package ar.edu.unahur.obj2.vendedores
 
-class CentroDeDistribucion(ciudad: Ciudad,private var vendedores: MutableList<Vendedor>) {
+class CentroDeDistribucion(ciudad: Ciudad) {
+    private val vendedores = mutableListOf<Vendedor>()
+
     fun agregarVendedores(vendedor: Vendedor) {
         if(vendedores.contains(vendedor)){
             throw Exception("YA EXISTE VENDEDOR")
         }
-        else{
-            vendedores.add(vendedor)
-        }
+        vendedores.add(vendedor)
     }
-    fun vendedorEstrella(): Vendedor? {
-        return vendedores.maxBy { it.puntajeCertificaciones() }
-    }
+    fun vendedorEstrella(): Vendedor? = vendedores.maxBy { it.puntajeCertificaciones() }
     fun puedeCubrir( unaCiudad: Ciudad) = vendedores.any { it.puedeTrabajarEn(ciudad = unaCiudad) }
-    fun vendedoresGenericos(): List<Vendedor> {
-        return vendedores.filter { it.esGenerico() }
-    }
-    fun esRobusto() = (vendedores.filter{it.esFirme()}).size >= 3
+    fun vendedoresGenericos(): List<Vendedor> = vendedores.filter { it.esGenerico() }
+    fun esRobusto() = vendedores.count{it.esFirme()} >= 3
 }

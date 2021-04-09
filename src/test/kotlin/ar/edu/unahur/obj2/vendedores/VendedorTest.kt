@@ -48,8 +48,8 @@ class VendedorTest : DescribeSpec({
             }
         }
         describe("esInfluyente"){
-            it("es influyente") {
-                viajante.esInfluente().shouldBeTrue()
+            it("No es influyente") {
+                viajante.esInfluyente().shouldBeFalse()
             }
         }
         describe("no es versatil"){
